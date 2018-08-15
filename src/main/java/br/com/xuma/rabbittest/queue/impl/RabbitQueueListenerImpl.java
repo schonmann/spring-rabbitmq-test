@@ -6,12 +6,12 @@ import org.springframework.stereotype.Component;
 import br.com.xuma.rabbittest.dto.EnvelopeDTO;
 import br.com.xuma.rabbittest.queue.RabbitQueueListener;
 
+/**
+ *  Class wrapping listener methods to receive messages from specified queues.
+ */
+
 @Component
 public class RabbitQueueListenerImpl implements RabbitQueueListener {
-
-    /**
-     *  Listener method to receive messages from queue "fooqueue".
-     */
 
     @RabbitListener(queues = "${node.queues.fanoutQueueFoo}")
     @Override
