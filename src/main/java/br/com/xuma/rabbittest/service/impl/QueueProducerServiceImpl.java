@@ -28,7 +28,8 @@ public class QueueProducerServiceImpl implements QueueProducerService {
 	@Override
 	public void produceMessage() {
         EnvelopeDTO envelopeDTO = new EnvelopeDTO();
-        envelopeDTO.setFrom("Foo");
+        envelopeDTO.setFrom("Fooguy");
+        envelopeDTO.setBody("Hello, subscriber!");
         envelopeDTO.setTimestamp(new Date().getTime());
         queueSender.sendMessage(fanoutExchange, "", envelopeDTO);
 	}

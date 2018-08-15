@@ -8,6 +8,9 @@ public class EnvelopeDTO implements Serializable {
 
     @JsonProperty("from")
     public String from;
+    
+    @JsonProperty("body")
+    public String body;
 
     @JsonProperty("timestamp")
     public Long timestamp;
@@ -27,6 +30,20 @@ public class EnvelopeDTO implements Serializable {
     }
 
     /**
+     * @return the body
+     */
+    public String getBody() {
+        return body;
+    }
+
+    /**
+     * @param body the body to set
+     */
+    public void setBody(String body) {
+        this.body = body;
+    }
+
+    /**
      * @return the timestamp
      */
     public Long getTimestamp() {
@@ -42,6 +59,6 @@ public class EnvelopeDTO implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("%d - %s", timestamp, from);
+        return String.format("%d - %s: %s", timestamp, from, body);
     }
 }
