@@ -1,8 +1,10 @@
 package br.com.xuma.rabbittest.dto;
 
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class EnvelopeDTO {
+public class EnvelopeDTO implements Serializable {
 
     @JsonProperty("from")
     public String from;
