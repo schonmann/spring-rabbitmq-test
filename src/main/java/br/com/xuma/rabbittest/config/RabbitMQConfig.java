@@ -23,53 +23,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 public class RabbitMQConfig implements RabbitListenerConfigurer {
 
-    @Value(value = "${node.queues.fanoutExchange}")
-    private String fanoutExchange;
-
-    @Value(value = "${node.queues.fanoutQueueFoo}")
-    private String fanoutQueueFoo;
-
-    @Value(value = "${node.queues.fanoutQueueBar}")
-    private String fanoutQueueBar;
-
-    @Value(value = "${node.queues.fanoutQueueBaz}")
-    private String fanoutQueueBaz;
-
-    // @Bean
-    // public FanoutExchange fanoutExchange() {
-    //     return new FanoutExchange(fanoutExchange);
-    // }
-
-    // @Bean
-    // public Queue fanoutQueueFoo() {
-    //     return new Queue(fanoutQueueFoo);
-    // }
-
-    // @Bean
-    // public Queue fanoutQueueBar() {
-    //     return new Queue(fanoutQueueBar);
-    // }
-
-    // @Bean
-    // public Queue fanoutQueueBaz() {
-    //     return new Queue(fanoutQueueBaz);
-    // }
-
-    // @Bean
-    // public Binding declareFanoutToQueueBindingFoo() {
-    //     return BindingBuilder.bind(fanoutQueueFoo()).to(fanoutExchange());
-    // }
-
-    // @Bean
-    // public Binding declareFanoutToQueueBindingBar() {
-    //     return BindingBuilder.bind(fanoutQueueBar()).to(fanoutExchange());
-    // }
-
-    // @Bean
-    // public Binding declareFanoutToQueueBindingBaz() {
-    //     return BindingBuilder.bind(fanoutQueueBaz()).to(fanoutExchange());
-    // }
-
     @Bean
     public RabbitTemplate rabbitTemplate(final ConnectionFactory connectionFactory) {
         final RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
