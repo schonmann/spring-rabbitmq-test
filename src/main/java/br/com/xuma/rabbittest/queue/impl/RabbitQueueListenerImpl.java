@@ -21,8 +21,7 @@ public class RabbitQueueListenerImpl implements RabbitQueueListener {
     @RabbitListener(
         bindings = @QueueBinding(
             value = @Queue(value = "${node.queues.fanoutQueueFoo}"),
-            exchange = @Exchange(value = "${node.queues.fanoutExchange}", type = ExchangeTypes.FANOUT),
-            arguments = @Argument(name = "x-expires", value = "604800000")
+            exchange = @Exchange(value = "${node.queues.fanoutExchange}", type = ExchangeTypes.FANOUT)
         )
     )
     @Override
@@ -33,8 +32,7 @@ public class RabbitQueueListenerImpl implements RabbitQueueListener {
     @RabbitListener(
         bindings = @QueueBinding(
             value = @Queue(value = "${node.queues.fanoutQueueBar}"),
-            exchange = @Exchange(value = "${node.queues.fanoutExchange}", type = ExchangeTypes.FANOUT),
-            arguments = @Argument(name = "x-expires", value = "604800000")
+            exchange = @Exchange(value = "${node.queues.fanoutExchange}", type = ExchangeTypes.FANOUT)
         )
     )
     @Override
@@ -45,8 +43,7 @@ public class RabbitQueueListenerImpl implements RabbitQueueListener {
     @RabbitListener(
         bindings = @QueueBinding(
             value = @Queue(value = "${node.queues.fanoutQueueBaz}"),
-            exchange = @Exchange(value = "${node.queues.fanoutExchange}", type = ExchangeTypes.FANOUT),
-            arguments = @Argument(name = "x-expires", value = "604800000")
+            exchange = @Exchange(value = "${node.queues.fanoutExchange}", type = ExchangeTypes.FANOUT)
         )
     )
     @Override
